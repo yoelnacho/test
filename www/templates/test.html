@@ -1,0 +1,17 @@
+<ion-view view-title="Test angular">
+  <ion-content>
+    <h1 class="padding">{{ title }}</h1>
+
+    <label for="name" class="item item-input">
+        <input type="text" name="name" ng-model="search" placeholder="Search...">
+    </label>
+
+    <ion-list>
+        <ion-item class="item item-divider">Results:</ion-item>
+        <ion-item ui-sref="app.home"
+            ng-repeat="item in items | filter: search">
+            {{ item.name }}
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

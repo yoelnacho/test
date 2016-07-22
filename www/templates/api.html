@@ -1,0 +1,14 @@
+<ion-view view-title="Api Rest">
+  <ion-content>
+    <h1>Api Rest</h1>
+
+    <!-- si cambia que lo detecte con ng-change y ejecute una funcion -->
+    <select ng-model="region"
+        ng-options="country for country in countries"
+        ng-change="updatedCountry()">
+        <option value="">Select a country</option>
+    </select>
+    <label>Test: {{ region }}</label>
+
+  </ion-content>
+</ion-view>
