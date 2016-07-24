@@ -3,12 +3,28 @@
     <h1>Api Rest</h1>
 
     <!-- si cambia que lo detecte con ng-change y ejecute una funcion -->
-    <select ng-model="region"
-        ng-options="country for country in countries"
-        ng-change="updatedCountry()">
-        <option value="">Select a country</option>
+    <select ng-model="regionResults"
+        ng-change="updatedRegion(regionResults.name)"
+        ng-options="region.name for region in regions">
+        <option value="">Select a region</option>
     </select>
-    <label>Test: {{ region }}</label>
+    {{ regionResults.name }}<br>
+
+    <!-- <select ng-model="countryResults"
+        ng-change="updatedCountry(countryResults.name)"
+        ng-options="result.name for result in regionResults | regionResults.name">
+        <option value="">Select a region</option>
+    </select>
+    {{ countryResults.name }} -->
+
+    <section ng-if="false">
+        <h4>{{ regionResults.name }}</h4>
+        <h4>{{ countryResults.name }}</h4>
+        <img ng-src="http://www.geonames.org/flags/x/{{ results.alpha2Code| lowercase}}.gif" alt="{{ results.name }}" />
+        <p>
+        {{ regionResults.population | number:0 }} habitantes.
+        </p>
+    </section>
 
   </ion-content>
 </ion-view>

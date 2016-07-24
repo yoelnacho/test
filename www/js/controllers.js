@@ -1,6 +1,6 @@
 angular.module('app-controller', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $ionicHistory, $timeout) {
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -19,7 +19,7 @@ angular.module('app-controller', [])
 
   $scope.closeLogin = function() {
     $scope.modal.hide().then(function() {
-        removeBackView();
+        $ionicHistory.removeBackView();
     });
   };
 
