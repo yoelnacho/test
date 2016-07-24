@@ -20,16 +20,28 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#/app/home">
+        <ion-item menu-close
+            href="#/app/home"
+            class="item-icon-left">
+            <i class="icon ion-home"></i>
             Home
         </ion-item>
-        <ion-item menu-close ng-click="login()">
-            Login
+        <ion-item menu-close
+            ng-click="login()"
+            class="item-icon-left">
+            <i class="icon ion-pinpoint"></i>
+            Modal
         </ion-item>
-        <ion-item menu-close href="#/app/api">
+        <ion-item menu-close
+            href="#/app/api"
+            class="item-icon-left">
+            <i class="icon ion-paper-airplane"></i>
             Api Rest
         </ion-item>
-        <ion-item menu-close href="#/app/test">
+        <ion-item menu-close
+            href="#/app/test"
+            class="item-icon-left">
+            <i class="icon ion-code"></i>
             Angular test
         </ion-item>
       </ion-list>
