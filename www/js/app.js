@@ -7,10 +7,9 @@
 angular.module('starter', [
     'ionic',
     'app-controller',
-    'test-controller',
-    'api-controller',
     'home-controller',
-    'playlist-controller'
+    'test-controller',
+    'api-controller'
 ])
 
 .run(function($ionicPlatform) {
@@ -40,11 +39,21 @@ angular.module('starter', [
     controller: 'AppCtrl'
   })
 
+  .state('app.home', {
+      url: '/home',
+      views: {
+        'menuContent': {
+          templateUrl: 'js/app/home/home.html',
+          controller: 'HomeCtrl'
+        }
+      }
+  })
+
   .state('app.test', {
     url: '/test',
     views: {
       'menuContent': {
-        templateUrl: 'templates/test.html',
+        templateUrl: 'js/app/test/test.html',
         controller: 'TestCtrl'
       }
     }
@@ -54,20 +63,10 @@ angular.module('starter', [
     url: '/api',
     views: {
       'menuContent': {
-        templateUrl: 'templates/api.html',
+        templateUrl: 'js/app/api/api.html',
         controller: 'ApiCtrl'
       }
     }
-  })
-
-  .state('app.home', {
-      url: '/home',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/home.html',
-          controller: 'HomeCtrl'
-        }
-      }
   });
 
   // if none of the above states are matched, use this as the fallback
