@@ -1,28 +1,28 @@
 angular.module('test-controller', [])
 
-.controller('TestCtrl', function($scope, $location, $anchorScroll) {
+.controller('TestCtrl', function($scope, $location, $anchorScroll, $stateParams) {
     // title
     $scope.title = "Angular test";
 
     // Listado
     $scope.items = [
-        { id: 1, name: 'uno'},
-        { id: 2, name: 'dos'},
-        { id: 3, name: 'tres'},
-        { id: 4, name: 'cuatro'},
-        { id: 5, name: 'cinco'},
-        { id: 6, name: 'seis'},
-        { id: 7, name: 'siete'},
-        { id: 8, name: 'ocho'},
-        { id: 9, name: 'nueve'},
-        { id: 10, name: 'diez'},
-        { id: 11, name: 'once'},
-        { id: 12, name: 'doce'},
-        { id: 13, name: 'trece'},
-        { id: 14, name: 'catorce'},
-        { id: 15, name: 'quince'},
-        { id: 16, name: 'dieciseis'},
-        { id: 17, name: 'diecisiete'}
+        { id: 1, name: 'uno', description: 'Descripción 1'},
+        { id: 2, name: 'dos', description: 'Descripción 2'},
+        { id: 3, name: 'tres', description: 'Descripción 3'},
+        { id: 4, name: 'cuatro', description: 'Descripción 4'},
+        { id: 5, name: 'cinco', description: 'Descripción 5'},
+        { id: 6, name: 'seis', description: 'Descripción 6'},
+        { id: 7, name: 'siete', description: 'Descripción 7'},
+        { id: 8, name: 'ocho', description: 'Descripción 8'},
+        { id: 9, name: 'nueve', description: 'Descripción 9'},
+        { id: 10, name: 'diez', description: 'Descripción 10'},
+        { id: 11, name: 'once', description: 'Descripción 11'},
+        { id: 12, name: 'doce', description: 'Descripción 12'},
+        { id: 13, name: 'trece', description: 'Descripción 13'},
+        { id: 14, name: 'catorce', description: 'Descripción 14'},
+        { id: 15, name: 'quince', description: 'Descripción 15'},
+        { id: 16, name: 'dieciseis', description: 'Descripción 16'},
+        { id: 17, name: 'diecisiete', description: 'Descripción 17'}
     ];
 
     $scope.goto = function(e) {
