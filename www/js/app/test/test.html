@@ -8,10 +8,11 @@
 
     <ion-list>
         <ion-item class="item item-divider">Results:</ion-item>
-        <ion-item ui-sref="app.home"
+        <ion-item ui-sref="app.detail({id: item.id})"
             ng-repeat="item in items | filter: search">
             {{ item.name }}
         </ion-item>
     </ion-list>
+
   </ion-content>
 </ion-view>

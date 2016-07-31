@@ -9,6 +9,7 @@ angular.module('starter', [
     'app-controller',
     'home-controller',
     'test-controller',
+    'test-detail-controller',
     'api-controller'
 ])
 
@@ -59,6 +60,16 @@ angular.module('starter', [
     }
   })
 
+  .state('app.detail', {
+    url: '/test/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'js/app/test/test-detail.html',
+        controller: 'TestDetailCtrl'
+      }
+    }
+  })
+
   .state('app.api', {
     url: '/api',
     views: {
@@ -70,5 +81,5 @@ angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/test');
 });

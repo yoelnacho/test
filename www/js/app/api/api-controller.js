@@ -1,13 +1,20 @@
 angular.module('api-controller', [])
 
 .controller('ApiCtrl', function($scope, $http, $log) {
-    var path = "https://restcountries.eu/rest/v1/region/"; //API path
+    var path = "https://restcountries.eu/rest/v1/"; //API path
 
     $scope.regions = [
         { name: 'europe' },
         { name: 'americas' },
         { name: 'asia' },
         { name: 'africa' }
+    ];
+
+    $scope.countries = [
+        { name: 'argentina' },
+        { name: 'brazil' },
+        { name: 'uruguay' },
+        { name: 'chile' }
     ];
 
     $scope.regionResults = [];
@@ -19,7 +26,7 @@ angular.module('api-controller', [])
 
         $http({
             method: 'GET',
-            url: path + region
+            url: path + 'region/' + region
         }).then(function successCallback(success) {
 
             $scope.regionResults = success;
@@ -38,16 +45,16 @@ angular.module('api-controller', [])
 
         $http({
             method: 'GET',
-            url: path + regionResults + '/' + country
+            url: path + 'name/' + country
         }).then(function successCallback(success) {
 
             $scope.results = success;
-            $log.debug($scope.results);
-
-            //return $scope.regionsResults;
+            $log.debug("Consulta correcta... " + country);
+            
+            return $scope.results;
 
         }, function errorCallback(error) {
-            $log.debug(error);
+            $log.debug('Se produjo el error: ' + error);
         });
     }
 
