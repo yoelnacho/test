@@ -1,6 +1,6 @@
 angular.module('test-controller', [])
 
-.controller('TestCtrl', function($scope, $location, $anchorScroll, $stateParams) {
+.controller('TestCtrl', function($scope, $location, $anchorScroll) {
     // title
     $scope.title = "Angular test";
 

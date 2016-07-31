@@ -9,6 +9,7 @@ angular.module('starter', [
     'app-controller',
     'home-controller',
     'test-controller',
+    'test-detail-controller',
     'api-controller'
 ])
 
@@ -63,7 +64,8 @@ angular.module('starter', [
     url: '/test/:id',
     views: {
       'menuContent': {
-        templateUrl: 'js/app/test/test-detail.html'
+        templateUrl: 'js/app/test/test-detail.html',
+        controller: 'TestDetailCtrl'
       }
     }
   })
