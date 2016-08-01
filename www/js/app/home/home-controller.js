@@ -6,6 +6,7 @@ angular.module('home-controller', [])
     $ionicHistory,
     $timeout,
     $log,
+    $ionicLoading,
     $ionicBackdrop) {
 
     // Title
@@ -18,6 +19,17 @@ angular.module('home-controller', [])
         $timeout(function() {
             $ionicBackdrop.release();
         }, 3000);
+   };
+
+   $scope.showLoading = function() {
+      $ionicLoading.show({
+        //  template: 'Loading...'
+         template: '<ion-spinner icon="dots"></ion-spinner>'
+      });
+
+      $timeout(function() {
+          $ionicLoading.hide();
+      }, 5000);
    };
 
     // Create the login modal that we will use later
