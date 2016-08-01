@@ -11,6 +11,8 @@
         <ion-item ui-sref="app.detail({id: item.id})"
             ng-repeat="item in items | filter: search">
             {{ item.name }}
+            <ion-option-button class="button-positive">Option 1</ion-option-button>
+            <ion-option-button class="button-assertive">Option 2</ion-option-button>
         </ion-item>
     </ion-list>
 
