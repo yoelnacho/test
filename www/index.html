@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
+
+    <!-- Chrome, Firefox OS y Opera -->
+    <meta name="theme-color" content="#4285f4"/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4285f4"/>
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
     <!-- <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above -->
@@ -23,9 +31,17 @@
     <script src="js/app/test/test-controller.js"></script>
     <script src="js/app/test/test-detail-controller.js"></script>
     <script src="js/app/home/home-controller.js"></script>
-  </head>
-
-  <body ng-app="starter">
+</head>
+<body ng-app="starter">
     <ion-nav-view></ion-nav-view>
-  </body>
+    <script type="text/javascript">
+    function isRunningStandalone() {
+return (window.matchMedia('(display-mode: standalone)').matches);
+}
+...
+if (isRunningStandalone()) {
+/* This code will be executed if app is running standalone */
+}
+    </script>
+</body>
 </html>
